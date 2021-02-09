@@ -1,5 +1,5 @@
-import SignInPage from "./pages/SignInPage";
-import About from "./pages/About";
+import SignInPage from "../pages/SignInPage";
+import About from "../pages/About";
 
 interface Routes {
   path: string;
@@ -18,10 +18,17 @@ export const routes: Array<Routes> = [
     component: SignInPage,
   },
   {
+    path: "/articles",
+    name: "Articles",
+    exact: false,
+    private: true,
+    component: About,
+  },
+  {
     path: "/about",
     name: "About",
     exact: false,
-    private: false,
+    private: true,
     component: About,
   },
 ];

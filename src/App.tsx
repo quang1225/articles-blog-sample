@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import { routes } from "./routes";
+import { routes } from "./routes/routes";
 import PrivateRoute from "./routes/PrivateRoute";
 import PublicRoute from "./routes/PublicRoute";
 import "./styles/App.css";
@@ -14,7 +14,6 @@ const ContentWrap = styled.div`
   justify-content: center;
   flex: 1;
   padding: 30px;
-  overflow-y: auto;
 `;
 
 function App() {
