@@ -1,5 +1,6 @@
 import SignInPage from "../pages/SignInPage";
 import About from "../pages/About";
+import Articles from "../pages/Articles";
 
 interface Routes {
   path: string;
@@ -22,7 +23,7 @@ export const routes: Array<Routes> = [
     name: "Articles",
     exact: false,
     private: true,
-    component: About,
+    component: Articles,
   },
   {
     path: "/about",

@@ -5,15 +5,16 @@ import PrivateRoute from "./routes/PrivateRoute";
 import PublicRoute from "./routes/PublicRoute";
 import "./styles/App.css";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import styled from "styled-components";
 import { AnimatedSwitch } from "react-router-transition";
 
 const ContentWrap = styled.div`
   display: flex;
   width: 100%;
+  min-height: 275px;
   justify-content: center;
   flex: 1;
-  padding: 30px;
 `;
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
                 <PublicRoute key={route.path} path={route.path} exact={route.exact} component={route.component} />
               )
             )}
+            <Footer />
           </AnimatedSwitch>
         </ContentWrap>
       </BrowserRouter>

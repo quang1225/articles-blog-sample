@@ -83,7 +83,8 @@ const Navbar = () => {
     setToken(getItemLocalStorage("token", ""));
   }, [location]);
 
-  return (
+  if(!token) return null
+  else return (
     <NavbarWrap container xs={12}>
       <Hidden xsDown>
         <Paper square>
@@ -93,7 +94,7 @@ const Navbar = () => {
           <Grid item xs={12} justify="center">
             <ListNav>
               {routes.map((route) => (
-                <li key={route.path}>
+                !(token && route.path === '/') && <li key={route.path}>
                   <NavLinkStyled activeClassName="active" to={route.path} exact={route.exact}>
                     {route.name}
                   </NavLinkStyled>
@@ -126,7 +127,7 @@ const Navbar = () => {
             </IconButton>
             <Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
               {routes.map((route) => (
-                <li key={route.path}>
+                !(token && route.path === '/') && <li key={route.path}>
                   <MenuItem onClick={handleClose}>
                     <NavLinkStyled activeClassName="active" to={route.path} exact={route.exact}>
                       {route.name}
